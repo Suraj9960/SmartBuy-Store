@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="User/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+	<section>
+		<div class=" grid grid-cols-3 gap-4 justify-center">
+			<!-- Card 1 -->
+			<div th:each="product : ${products}">
+				<div class="bg-white p-4 shadow-lg rounded-lg">
+					<div
+						class="card relative flex flex-col items-center p-4 border rounded-md group">
+						<img
+							th:src="@{/Product_image/{filename}(filename=${product.productsImage})}"
+							alt="Image 1" class="h-[130px]"> <span
+							class="font-bold text-[16px] cursor-pointer hover:text-blue-700"
+							th:text="${product.product_name}"></span>
+						<div class="flex space-x-2 mt-2">
+							<span class="font-bold text-[16px] cursor-pointer"
+								th:text="'Rs.' +${product.discountedPrice}"></span> <span
+								class=" text-gray-500 text-[16px] cursor-pointer"
+								th:text="'Rs.' +${product.price}"></span> <span
+								class=" font-bold text-green-700 text-[16px] cursor-pointer"
+								th:text="${product.categories.discount} + '% off '"></span>
+
+						</div>
+
+						<!-- Buttons that will appear on hover -->
+						<div class="flex mt-6 mb-2">
+							<a th:href="@{add-cart(product_id=${product.product_id})}">
+								<button type="button"
+									class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Add
+									Cart</button>
+							</a> <a th:href="@{view-page(product_id=${product.product_id})}">
+								<button type="button"
+									class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Buy
+									Now</button>
+
+							</a>
+
+						</div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Admin/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+	<section>
+
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th scope="col">Name of Users</th>
+					<th scope="col">Email Address</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.fullname}"></td>
+					<td th:text="${user.emailAddress}"></td>
+					<td><a
+						th:href="@{delete-user(user_id=${user.user_id})}">
+							<i class="fa-solid fa-trash" style="color: #d91734;"></i>&nbsp;Delete
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+
+
+	</section>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="User/Profile/profile-option :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<section>
+		<h2 class="text-center font-bold font-serif text-[18px] mb-8">Transaction
+			History</h2>
+
+		<table
+			class="min-w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+			<thead class="bg-blue-500 text-white">
+				<tr>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Name of
+						Customer</th>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Payment
+						Id</th>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Amount</th>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Mode of
+						Payment</th>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Status
+						Of Payment</th>
+					<th class="px-6 py-3 text-left text-sm font-semibold">Ordered
+						Date</th>
+				</tr>
+			</thead>
+
+			<tbody th:each="detail : ${details}">
+
+				<tr class="border-t">
+					<td class="px-6 py-4 text-black"
+						th:text="${detail.first_name} + ' ' + ${detail.last_name}"></td>
+					<td class="px-6 py-4 text-black" th:text="${detail.payment_id}"></td>
+					<td class="px-6 py-4 text-black" th:text="${detail.amount}"></td>
+					<td class="px-6 py-4 text-black" th:text="${detail.modeOfPayment}"></td>
+					<td class="px-6 py-4 text-black"
+						th:text="${detail.statusOfPayment}"></td>
+					<td class="px-6 py-4 text-black" th:text="${detail.dateTime}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</section>
+</body>
+</html>

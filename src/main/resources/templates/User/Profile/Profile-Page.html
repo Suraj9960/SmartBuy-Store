@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="User/Profile/profile-option :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<section>
+	<div class="container text-center flex flex-col items-center justify-center ">
+	<img class="rounded-full h-[120px] w-[120px]" src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg&ga=GA1.1.878652897.1726481188&semt=ais_hybrid"/>
+	<p class=" mt-4 font-bold font-serif text-[20px] tet-red-700">Welcome , <font th:text="${name}"></font> </p>
+	
+	</div>
+		<div
+			class="text-center mt-[100px] container bg-white text-black font-serif flex justify-center mb-6 justify-evenly ">
+			<div
+				class="border-2 border-green-600 w-[230px] h-[150px] shadow-lg text-[18px] font-bold flex flex-col items-center justify-center">
+				<i class="fa-solid fa-circle-user fa-2xl"></i> <span class="mt-4">
+				<a th:href="@{account-details}">View Profile</a>
+				</span>
+			</div>
+			<div
+				class="border-2 border-red-600 w-[230px] h-[150px] shadow-lg text-[18px] font-bold flex flex-col items-center justify-center">
+				<i class="fa-solid fa-box-open fa-2xl" style="color: #b7f218;"></i>
+				<span class="mt-4"><a th:href="@{all-orders}">All Orders</a></span>
+			</div>
+			<div
+				class="border-2 border-purple-600 w-[230px] h-[150px] shadow-lg text-[18px] font-bold flex flex-col items-center justify-center">
+				<i class="fa-solid fa-receipt fa-2xl"></i> <span class="mt-4"><a th:href="@{transction-details}">Transaction History</a></span>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Admin/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+	<section>
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th scope="col">Photo</th>
+					<th scope="col">Name</th>
+					<th scope="col">original Price (In Rs.)</th>
+					<th scope="col">Category</th>
+					<th scope="col">Price (After Discount in Rs.)</th>
+					<th scope="col">Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${products}">
+					<td class="text-center mx-auto"><img
+						th:src="@{/Product_image/{filename}(filename=${product.productsImage})}"
+						alt="Category Image" class="w-[150px] rounded h-[80px]" /></td>
+
+					<td th:text="${product.product_name}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.categories.category_name}"></td>
+					<td th:text="${product.discountedPrice}"></td>
+					<td>
+					<a th:href="@{update-product(product_id=${product.product_id})}">
+							<i class="fa-solid fa-plus" style="color:green;"></i>&nbsp;Update
+					</a>
+					<a th:href="@{delete-product(product_id=${product.product_id})}">
+							<i class="fa-solid fa-trash" style="color: #d91734;"></i>&nbsp;Delete
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</section>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Admin/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<section>
+
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th scope="col">Banner Id</th>
+					<th scope="col">Photo</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="banner : ${banners}">
+				<td class="text-center mx-auto" th:text="${banner.banner_id}"></td>
+					<td class="text-center mx-auto"><img
+						th:src="@{/Banner_image/{filename}(filename=${banner.banner_image})}"
+						alt="Category Image" class="w-[150px] rounded h-[80px]" /></td>
+					<td><a
+						th:href="@{delete-banner(banner_id=${banner.banner_id})}"> <i
+							class="fa-solid fa-trash" style="color: #d91734;"></i>&nbsp;Delete
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+
+
+	</section>
+
+
+</body>
+</html>

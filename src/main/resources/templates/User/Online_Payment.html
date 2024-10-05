@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ecommerence Website</title>
+<link rel="icon"
+	th:href="@{data:image/jpeg;base64,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}"
+	type="image/x-icon" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+	integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script
+	src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+	integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script th:src="@{/Js/script.js}"></script>
+
+
+</head>
+<body>
+	<div th:replace="~{Navbar :: navbar}"></div>
+
+	<div
+		class="mx-auto shadow-lg border-1 border-gray-100 my-4 w-[500px] p-2">
+		<h1
+			class="text-center font-bold text-red-600 font-serif my-2 text-[20px]">Payment
+			Gateway</h1>
+
+		<div
+			class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0">
+			<div th:each="cart : ${details}">
+				<div class="mb-2 flex justify-between">
+					<p class="text-gray-700">Subtotal</p>
+					<p class="text-black-700 font-md font-serif ml-4"
+						th:text="'Rs '+${details.cart.subtotal}"></p>
+				</div>
+				<div class="flex justify-between">
+					<p class="text-gray-700">Shipping</p>
+					<p class="text-black-700 font-md font-serif ml-4"
+						th:text="'Rs '+${details.cart.shipping}"></p>
+				</div>
+				<hr class="my-4" />
+				<div class="flex justify-between">
+					<p class="text-lg font-bold">Total</p>
+					<div class="">
+						<p class="mb-1 text-lg font-bold"
+							th:text="'Rs '+${details.cart.totalToPay}"></p>
+						<input type="hidden" id="payment_field" name="s"
+							th:value="${price}" /> <input type="hidden" name="k"
+							id="ticketId" th:value="${paymentId}" />
+
+
+					</div>
+				</div>
+				<div th:if="${status == 'paid'}">
+					<a>
+						<button
+							class="mt-6 w-full  bg-orange-600 py-1.5">
+							Thank You</button>
+					</a>
+				</div>
+				<div th:unless="${status == 'paid'}">
+					<a>
+						<button th:onclick="paymentStart()"
+							class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+							Pay Now</button>
+							
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<!-- Including Jquery -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+		crossorigin="anonymous"></script>
+
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+		integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+</html>

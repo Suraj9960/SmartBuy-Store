@@ -1,0 +1,43 @@
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	filter: invert(1);
+	border-radius: 50%;
+}
+
+.carousel-indicators button {
+	background-color: blue;
+}
+
+.carousel-indicators input[type="radio"] {
+	appearance: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: blue;
+	border: 2px solid white;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.carousel-indicators input[type="radio"]:checked {
+	background-color: blue;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Position the modal dialog to the right */
+.modal-dialog.modal-dialog-end {
+    margin: 0; /* Remove default margins */
+    position: absolute; /* Position it absolutely */
+    right: 0; /* Align to the right edge */
+    top: 0; /* Align to the top edge */
+}
+
+/* Increase the height of the modal content */
+.custom-modal-height {
+    height: 100vh; 
+}
+
+
+
+
+
+

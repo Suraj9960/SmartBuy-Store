@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Admin/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+	<section>
+	<div class="mb-4 text-center font-bold font-serif text-red-600"> Add Product Details</div>
+		<div
+			class=" p-4 mx-auto bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0  dark:border-gray-700">
+			<form class="space-y-4 md:space-y-6" method="post"
+				th:action="@{add-details}">
+				<input type="hidden" name="id" th:value="${id}"/>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Brand
+						Name </label> <input type="text" name="brand_name" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Operating
+						System</label> <input type="text" name="operating_system" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Processor
+						Brand </label> <input type="text" name="processor_brand" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Battery
+						Capacity </label> <input type="text" name="battery_capacity" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">RAM </label> <input
+						type="text" name="ram" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Internal
+						Storage </label> <input type="text" name="internal_storage" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Primary
+						Camera Name </label> <input type="text" name="primary_camera" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Secondary
+						Camera Resolution </label> <input type="text" name="secondary_camera"
+						id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">SIM Type
+					</label> <input type="text" name="sim_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Network
+						Type </label> <input type="text" name="newtwork_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Resolution
+						Type </label> <input type="text" name="resolution_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Earphone
+						Type </label> <input type="text" name="type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Compatible Devices
+					</label> <input type="text" name="compatible_with" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Headphone Type
+					</label> <input type="text" name="headphone_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Dial Shape
+					</label> <input type="text" name="dial_shape" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Display Size
+					</label> <input type="text" name="display_size" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Ideal For
+					</label> <input type="text" name="ideal_for" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Display Type
+					</label> <input type="text" name="display_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Processor
+					</label> <input type="text" name="processor_with_generation" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Storage Type
+					</label> <input type="text" name="storage_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<div>
+					<label for="email"
+						class="block mb-2 text-sm font-medium text-black">Graphics Memory Type
+					</label> <input type="text" name="graphics_memory_type" id="email"
+						class=" border border-gray-300 text-black rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+				</div>
+				<button type="submit"
+					class="w-full text-white font-bold  px-5 py-2.5 text-center bg-blue-500 rounded-md">Update
+					Product</button>
+			</form>
+		</div>
+	</section>
+
+
+</body>
+</html>

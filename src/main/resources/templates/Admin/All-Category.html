@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="Admin/base :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<section>
+		<h1 class="text-center p-4 font-bold font-serif mb-2 text-[20px]">
+			All Category</h1>
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th scope="col">Photo</th>
+					<th scope="col">Name</th>
+					<th scope="col">Discount (In Percentage (%))</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="category : ${categories}">
+					<td class="text-center mx-auto"><img
+						th:src="@{/Category_image/{filename}(filename=${category.image})}"
+						alt="Category Image" class="w-[150px] rounded h-[80px]" /></td>
+
+					<td th:text="${category.category_name}"></td>
+					<td th:text="${category.discount}"></td>
+					<td><a
+						th:href="@{delete-category(category_id=${category.category_id})}">
+							<i class="fa-solid fa-trash" style="color: #d91734;"></i>&nbsp;Delete
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</section>
+
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Electronic Store</title>
+<link href="" th:href="@{/Css/home-page.css}" rel="stylesheet" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+	integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script
+	src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+	<!-- Navbar  -->
+
+	<div th:fragment="buse">
+
+
+
+		<div
+			class="container-fluid h-[80px] flex justify-between items-center px-6 shadow-md">
+			<!-- Left content -->
+			<div class="flex items-center">
+				<div>
+					<img
+						src="https://i.pinimg.com/originals/92/0b/3d/920b3d90f07d4f56b37e2d8768d73422.jpg"
+						class="w-[100px] rounded-full" />
+				</div>
+				<div
+					class="ml-0 text-[22px] font-sans-serif font-bold text-blue-600">Electro</div>
+			</div>
+
+
+
+			<!-- Centered navigation -->
+			<div class="flex-middle">
+				<div th:if="${userobj == null}">
+					<ul class="flex space-x-4">
+						<li class="cursor-pointer font-sans font-bold"><a href="/">Home</a></li>
+						<li class="cursor-pointer font-sans-serif font-bold"><a
+							th:href="@{/signup}">Shop</a></li>
+					</ul>
+				</div>
+
+				<div th:unless="${userobj == null}">
+					<ul class="flex space-x-4">
+						<li class="cursor-pointer font-sans font-bold"><a href=""
+							th:href="@{/ecommerence/admin/admin-dashboard}">Home</a></li>
+						<li class="cursor-pointer font-sans-serif font-bold"><a
+							th:href="@{/ecommerence/admin/all-products}">All Products</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<!-- Right content -->
+			<div class="flex-end">
+				<ul class="flex space-x-4">
+					<li>
+						<div class="dropdown">
+							<a class="" href="#" role="button" id="dropdownMenuLink"
+								data-bs-toggle="dropdown" aria-expanded="false"><i
+								class="fa-solid fa-magnifying-glass" style="color: #1b1c1d;"></i></a>
+
+							<ul class="dropdown-menu w-[400px]"
+								aria-labelledby="dropdownMenuLink">
+								<li><a class="dropdown-item" href="#">
+
+										<form class="flex items-center max-w-sm mx-auto">
+											<label for="simple-search" class="sr-only">Search</label>
+											<div class="relative w-full">
+												<div
+													class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+
+												</div>
+												<input type="text" id="simple-search"
+													class=" border-1 border-black text-md rounded-lg  w-full ps-10 p-2.5 "
+													placeholder=" Search Product Here ..." required />
+											</div>
+											<button type="submit"
+												class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 ">
+												<i class="fa-solid fa-magnifying-glass"
+													style="color: white;"></i>
+											</button>
+										</form>
+
+								</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<div th:if="${userobj == null}">
+							<div class="dropdown">
+								<a class="" href="#" role="button" id="dropdownMenuLink"
+									data-bs-toggle="dropdown" aria-expanded="false"><i
+									class="fa-regular fa-user" style="color: #313235;"></i></a>
+
+								<ul class="dropdown-menu font-serif font-semibold"
+									aria-labelledby="dropdownMenuLink">
+									<li class="py-2"><a class="dropdown-item" href="/signup"><i
+											class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;My Account</a></li>
+									<li class="py-2"><a class="dropdown-item" href="/signup"><i
+											class="fa-solid fa-heart" style="color: #d20f36;"></i>&nbsp;&nbsp;Wishlist</a></li>
+									<li class="py-2"><a class="dropdown-item" href="/signup"><i
+											class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Login /
+											Register</a></li>
+								</ul>
+							</div>
+						</div>
+
+
+						<div th:unless="${userobj == null}">
+							<div class="dropdown">
+								<a class="" href="#" role="button" id="dropdownMenuLink"
+									data-bs-toggle="dropdown" aria-expanded="false"><i
+									class="fa-regular fa-user" style="color: #313235;"></i></a>
+
+								<ul class="dropdown-menu font-serif font-semibold"
+									aria-labelledby="dropdownMenuLink">
+									<li class="py-2"><a class="dropdown-item"
+										href="/ecommerence/user/my-account"><i
+											class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;<b th:text="${userobj.fullname}"></b></a></li>
+									<li class="py-2"><a class="dropdown-item" href="/logout"><i
+											class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Logout</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Navbar End  -->
+
+
+
+</body>
+</html>

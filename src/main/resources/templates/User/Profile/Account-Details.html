@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="User/Profile/profile-option :: layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<section>
+		<div
+			class=" mb-12 container text-center flex flex-col items-center justify-center border-2 border-purple-600 shadow-lg">
+			<!-- User image and name -->
+			<div
+				class=" mt-[20px] mb-4 container text-center flex flex-col items-center justify-center ">
+				<img class="rounded-full h-[120px] w-[120px]"
+					src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg&ga=GA1.1.878652897.1726481188&semt=ais_hybrid" />
+				<p class="mt-1 text-center text-gray-500 tex-[14px]"
+					th:text="${userobj.fullname}"></p>
+			</div>
+
+			<form th:action="@{update-profile}" method="post">
+				<div class="font-serif space-y-8">
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Full Name :</p>
+						<input type="text" name="fullname" th:value="${userobj.fullname}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Email Address :</p>
+						<input type="email" name="emailAddress"
+							th:value="${userobj.emailAddress}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Password :</p>
+						<input type="password" name="password"
+							th:value="${userobj.password}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Phone No :</p>
+						<input type="text" name="phno"
+							th:value="${userobj.phno}" />
+					</div>
+					
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Address :</p>
+						<input type="text" name="address" th:value="${userobj.address}" />
+					</div>
+					<div class="mt-4 mb-4">
+						<button type="submit"
+							class="mx-2 p-2 text-white bg-green-700 font-serif">Update
+							Profile</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+		<div
+			class="container text-center flex flex-col items-center justify-center border-2 border-purple-600 shadow-lg">
+			<!-- User image and name -->
+			<div
+				class=" mt-[20px] mb-4 container text-center flex flex-col items-center justify-center ">
+				<img class="rounded-full h-[120px] w-[120px]"
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSemjlVSU7cnh7SYfEE3cYJmQpTAlzsghh8oQ&s" />
+				<p class="mt-1 mb-1 text-center text-black tex-[14px]">Address
+					Information</p>
+			</div>
+
+			<form th:action="@{update-address}" method="post">
+				<div class="font-serif space-y-8">
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Address Line :</p>
+						<input type="text" name="address" th:value="${userobj.address}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">City :</p>
+						<input type="text" name="city" th:value="${userobj.city}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">State :</p>
+						<input type="text" name="state" th:value="${userobj.state}" />
+					</div>
+					<div class="flex space-x-36">
+						<p class="font-bold text-[16px]">Zip Code :</p>
+						<input type="text" name="zipCode" th:value="${userobj.zipCode}" />
+					</div>
+					<div class="mt-4 mb-4">
+						<button type="submit"
+							class="mx-2 p-2 text-white bg-green-700 font-serif">Update
+							Address</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+
+	</section>
+</body>
+</html>

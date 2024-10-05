@@ -1,0 +1,39 @@
+.card-list .card-item{
+	width:400px;
+	padding:35px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	border-radius:8px;
+	backdrop-filter:blur(30px);
+	border: 1px solid rgba(255,255,255,0.5);
+	
+}
+
+.card-list .card-item .user-image{
+	width:250px;
+	height:200px;
+	margin-bottom: 40px;
+	padding: 4px;
+}
+
+.search-container{
+	position:relative;
+}
+
+.search-result{
+	position:absolute;
+	background:white;
+	border:1px solid gray;
+	padding:10px;
+}
+.search-item{
+	text-align:left;
+	padding-left:4px;
+	margin-bottom:10px;
+	margin-top:2px;
+	font-family:'serif';
+	font-size:16px;
+	font-weight:600;
+}
